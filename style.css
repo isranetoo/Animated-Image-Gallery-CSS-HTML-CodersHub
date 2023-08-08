@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,900;1,300;1,900&family=Roboto+Mono:ital,wght@0,300;0,600;1,600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    height: 100vh;
+    padding: 32px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(120deg,#2b29b9 ,#44a9ad);
+}
+
+.gallery {
+    display: flex;
+    gap: 16px;
+}
+
+.card {
+    position: relative;
+    left: 0px;
+    width: 140px;
+    height: 160px;
+    border-radius: 8px;
+    transition: 1000ms all;
+    transform-origin: center left;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.card img {
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+.card:hover figcaption {
+    font-size: 0.6rem;
+    position: absolute;
+    height: 80px;
+    width: 160px;
+    display: flex;
+    align-items: end;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%,rgba(0, 0, 0, 0) 100%);
+    color: white;
+    left: 0px;
+    bottom: 0px;
+    padding-left: 12px;
+    padding-bottom: 10px;
+}
+
+.card:hover ~ .card {
+    font-weight: bold;
+    cursor: pointer;
+    transform: translateX(22px);
+}
